@@ -10,13 +10,13 @@ html, body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Changed to column for responsiveness */
   background-color: aqua;
 }
 
 .textbox {
-  height: 100%;
-  width: 40%;
+  height: 10%; /* Changed to 50% to fit better in smaller screens */
+  width: 100%;
   display: grid;
   place-items: center;
 }
@@ -27,30 +27,45 @@ textarea {
   font-size: large;
   overflow-wrap: break-word;
   text-align: left;
-  vertical-align: top;
   border: none;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust transparency */
-  backdrop-filter: blur(10px); /* Adjust blur intensity */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .result {
-  height: 100%;
-  width: 60%;
+  height: 90%; /* Changed to 50% to fit better in smaller screens */
+  width: 100%;
   display: grid;
-  place-items: center;/* Adjust blur intensity */
+  place-items: center;
 }
 
-.target{
+.target {
   height: 90%;
   width: 90%;
   overflow-y: scroll;
   text-align: left;
-  vertical-align: top;
   border: none;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust transparency */
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .main-container {
+    flex-direction: row; /* Switch back to row layout for larger screens */
+  }
+
+  .textbox {
+    width: 40%; /* Adjust width for larger screens */
+    height: 100%;
+  }
+
+  .result {
+    width: 60%; /* Adjust width for larger screens */
+    height: 100%;
+  }
 }

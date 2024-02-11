@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="main-container">
+        <h1>Para to Playlist</h1>
         <div class="textbox">
             <textarea
             hx-post="/test"
@@ -15,6 +16,7 @@
             hx-include="[name='q']"
             hx-target=".target"
             hx-trigger="keyup delay:500ms"
+            placeholder="Add Text Here..."
             ></textarea>
         </div>
         <div class="result">
